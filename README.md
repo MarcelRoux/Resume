@@ -1,4 +1,8 @@
-# Adaptive CV (adcv) LaTeX class and template
+# Marcel Roux Resume
+
+This repo consolidates work for my Tex resume.
+
+The resume template is the Adaptive CV created by Alessandro Rossini.
 
 Adaptive CV allows to compile different variants of a CV (e.g., a résumé and an extended CV) from a single LaTeX source. It is particularly suitable for academic CVs but flexible enough to be used with any CVs.
 
