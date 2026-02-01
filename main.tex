@@ -5,8 +5,13 @@
 
 \usepackage{needspace}
 
+% Disable hyphenation globally
+\usepackage[none]{hyphenat}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
 \newcommand{\todayMonthYear}{\ifcase \month \or January\or February\or March\or April\or May%
-\or June\or July\or August\or September\or October\or November\or December\fi, %
+\or June\or July\or August\or September\or October\or November\or December\fi\ %
 \number \year}
 
 \newcommand*{\unistb}{Stellenbosch University}
@@ -30,7 +35,7 @@
 % ======================================================
 
 Senior software engineer with \textbf{8+ years of professional experience} building and operating
-\textbf{data-intensive, correctness-sensitive distributed systems}.  
+\textbf{data-intensive,\\correctness-sensitive distributed systems with high concurrency and strict ordering guarantees}.  
 Specialised in high-throughput ingestion pipelines, stream processing, and backend APIs where
 performance, ordering guarantees, and operational reliability matter.
 
@@ -54,17 +59,24 @@ Recent work focused on large-scale blockchain data ingestion and analytics platf
   \adcvrowmulti{• Owned on-call operations and incident response for customer-facing systems, driving post-incident reviews and reliability improvements.}
   \adcvrowmulti{• Coordinated cross-team initiatives across data science, product, and platform engineering.}
   \adcvrowmulti{• Remained hands-on with system design while mentoring engineers and improving CI/CD and documentation standards.}
+\else
+  \adcvrowmulti{• Led a team of 3 engineers (4 including myself) owning blockchain ingestion, analytics pipelines, and customer-facing data APIs.}
+  \adcvrowmulti{• Planned delivery against OKRs while maintaining on-call ownership, incident response and post-incident reliability improvements.}
 \fi
 \adcvrowskip
 
 \adcvrowtwo{\textbf{Senior Software Engineer}, Vybe Network — Vancouver, BC, Canada}{2023--2025}
 \ifextended
-  \adcvrowmulti{• Designed and operated Solana blockchain ingestion pipelines processing \textbf{thousands of transactions per second} with strict ordering and correctness guarantees.}
+  \adcvrowmulti{• Designed and operated event-driven, streaming ingestion pipelines processing \textbf{thousands of transactions per second} with strict ordering and correctness guarantees.}
   \adcvrowmulti{• Built Python-based live transaction and account parsers backed by Kafka, Postgres, and Kubernetes in production.}
-  \adcvrowmulti{• Contributed to a Rust- and ClickHouse-based ingestion architecture, implementing concurrent pipelines with explicit backpressure and correctness-preserving offset management.}
+  \adcvrowmulti{• Contributed to a Rust- and ClickHouse-based ingestion architecture, implementing concurrent, fault-tolerant pipelines with explicit backpressure and correctness-preserving offset management.}
   \adcvrowmulti{• Developed extensible protocol parsing frameworks, scaling supported protocols from single digits to \textbf{50+ protocols}.}
-  \adcvrowmulti{• Built internal and public APIs using FastAPI and Actix Web, including caching, access control, and rate limiting.}
+  \adcvrowmulti{• Built production internal and public backend APIs using FastAPI and Actix Web, including caching, access control, and rate limiting.}
   \adcvrowmulti{• Improved observability and operational insight through Prometheus and Grafana adoption.}
+\else
+  \adcvrowmulti{• Designed and operated Solana ingestion pipelines processing thousands of transactions per second with strict ordering and correctness guarantees.}
+  \adcvrowmulti{• Built concurrent, fault-tolerant Rust + ClickHouse ingestion paths with explicit backpressure and offset management.}
+  \adcvrowmulti{• Delivered production backend APIs and stream processors using Kafka, Postgres, FastAPI, and Actix Web.}
 \fi
 \adcvrowskip
 

@@ -32,38 +32,6 @@
   \printtrue
 }
 
-\DeclareOption{bg}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_bg.def}{}{
-      \ClassError{adcv}{Bulgarian definition file 'adcv_bg.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{hr}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_hr.def}{}{
-      \ClassError{adcv}{Croatian definition file 'adcv_hr.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{cs}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_cs.def}{}{
-      \ClassError{adcv}{Czech definition file 'adcv_cs.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{da}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_da.def}{}{
-      \ClassError{adcv}{Danish definition file 'adcv_da.def' not found.}
-    }
-  }
-}
-
 \DeclareOption{nl}{
   \AtEndOfPackage{
     \InputIfFileExists{adcv_nl.def}{}{
@@ -80,30 +48,6 @@
   }
 }
 
-\DeclareOption{et}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_et.def}{}{
-      \ClassError{adcv}{Estonian definition file 'adcv_et.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{fi}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_fi.def}{}{
-      \ClassError{adcv}{Finnish definition file 'adcv_fi.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{fr}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_fr.def}{}{
-      \ClassError{adcv}{French definition file 'adcv_fr.def' not found.}
-    }
-  }
-}
-
 \DeclareOption{de}{
   \AtEndOfPackage{
     \InputIfFileExists{adcv_de.def}{}{
@@ -116,118 +60,6 @@
   \AtEndOfPackage{
     \InputIfFileExists{adcv_el.def}{}{
       \ClassError{adcv}{Greek definition file 'adcv_el.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{hu}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_hu.def}{}{
-      \ClassError{adcv}{Hungarian definition file 'adcv_hu.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{ga}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_ga.def}{}{
-      \ClassError{adcv}{Irish definition file 'adcv_ga.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{it}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_it.def}{}{
-      \ClassError{adcv}{Italian definition file 'adcv_it.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{lv}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_lv.def}{}{
-      \ClassError{adcv}{Latvian definition file 'adcv_lv.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{lt}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_lt.def}{}{
-      \ClassError{adcv}{Lithuanian definition file 'adcv_lt.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{mt}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_mt.def}{}{
-      \ClassError{adcv}{Maltese definition file 'adcv_mt.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{no}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_no.def}{}{
-      \ClassWarningNoLine{adcv}{Norwegian definition file 'adcv_no.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{pl}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_pl.def}{}{
-      \ClassError{adcv}{Polish definition file 'adcv_pl.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{pt}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_pt.def}{}{
-      \ClassError{adcv}{Portuguese definition file 'adcv_pt.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{ro}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_ro.def}{}{
-      \ClassError{adcv}{Romanian definition file 'adcv_ro.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{sk}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_sk.def}{}{
-      \ClassError{adcv}{Slovak definition file 'adcv_sk.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{sl}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_sl.def}{}{
-      \ClassError{adcv}{Slovenian definition file 'adcv_sl.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{es}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_es.def}{}{
-      \ClassWarningNoLine{adcv}{Spanish definition file 'adcv_es.def' not found.}
-    }
-  }
-}
-
-\DeclareOption{sv}{
-  \AtEndOfPackage{
-    \InputIfFileExists{adcv_sv.def}{}{
-      \ClassWarningNoLine{adcv}{Swedish definition file 'adcv_sv.def' not found.}
     }
   }
 }
@@ -366,8 +198,6 @@
 \newcommand*{\adcvwebsite}[2]{\def\adcv@websiteurl{#1}\def\adcv@websitetext{#2}}
 \newcommand*{\adcvlinkedin}[2]{\def\adcv@linkedinurl{#1}\def\adcv@linkedinname{#2}}
 \newcommand*{\adcvgithub}[2]{\def\adcv@githuburl{#1}\def\adcv@githubname{#2}}
-\def\adcv@githuburl{}
-\def\adcv@githubname{}
 
 \graphicspath{{icons/}}
 
@@ -437,7 +267,7 @@
 
   \begin{center}%
     \ifonline%
-      \adcv@address~\adcv@email~\adcv@website~\adcv@linkedin~\adcv@github%
+      \adcv@address~\adcv@email~\adcv@website~\adcv@linkedin%
     \else%
       \adcv@address~\adcv@telephone%
 
@@ -460,7 +290,13 @@
 \AtBeginDocument{%
   \pagestyle{fancy}%
   \fancyhead{}%
-    \fancyfoot[C]{\footnotesize\light\adcv@firstname~\adcv@lastname\ifextended\adcv@cvofkey\else\adcv@resumeofkey\fi, \adcv@date, \adcv@telephone~\adcv@email, \adcv@linkedin\ifdefined\adcv@githuburl\ifx\adcv@githuburl\empty\else~\githubicon~\href{\adcv@githuburl\adcv@githubname}{\adcv@githuburl\adcv@githubname}\fi\else\fi}%
+        \fancyfoot[C]{\footnotesize\light%
+      \begin{tabular}{c}%
+        \adcv@firstname~\adcv@lastname\ifextended\adcv@cvofkey\else\adcv@resumeofkey\fi~---~\adcv@date\\%
+        \adcv@telephone~\adcv@email, \adcv@linkedin%
+        \ifdefined\adcv@githuburl\ifx\adcv@githuburl\empty\else~\githubicon~\href{\adcv@githuburl\adcv@githubname}{\adcv@githuburl\adcv@githubname}\fi\else\fi%
+      \end{tabular}%
+    }%
   \fancyfoot[R]{\raggedleft\footnotesize\light\adcv@page}%
   \renewcommand{\headrulewidth}{0em}%
   \setlength\footskip{\baselineskip}%
@@ -483,9 +319,15 @@
 
 % \newenvironment*{adcvtablethree}{\begin{longtable}[l]{@{}>{\raggedright}p{\adcv@leftcol}@{\hspace{\adcv@colsep}} @{}>{\raggedright}p{\adcv@centercol}@{} @{\hspace{\adcv@colsep}}>{\raggedleft}p{\adcv@rightcol}@{}}}{\end{longtable}}
 
-\newenvironment*{adcvtablethree}{\begin{longtable}[l]{@{}>{\raggedright}p{\adcv@leftcol}@{\hspace{\adcv@colsep}} @{}>{\raggedright}p{\adcv@centercol}@{} @{\hspace{\adcv@colsep}}>{\raggedleft}p{\adcv@rightcol}@{}}}{\end{longtable}}
+% \newenvironment*{adcvtablethree}{\begin{longtable}[l]{@{}>{\raggedright}p{\adcv@leftcol}@{\hspace{\adcv@colsep}} @{}>{\raggedright}p{\adcv@centercol}@{} @{\hspace{\adcv@colsep}}>{\raggedleft}p{\adcv@rightcol}@{}}}{\end{longtable}}
+% \newcommand*{\adcvrowthree}[3]{\bfseries #1 & #2 & #3\tabularnewline}
 
-\newcommand*{\adcvrowthree}[3]{\bfseries #1 & #2 & #3\tabularnewline}
+\newenvironment*{adcvtablethree}{%
+  \begin{longtable}[l]{@{}>{\raggedright}p{0.36\textwidth}@{\hspace{\adcv@colsep}}@{}>{\raggedright}p{0.64\textwidth}@{}}%
+}{%
+  \end{longtable}%
+}
+\newcommand*{\adcvrowthree}[3]{\bfseries #1 & #2\tabularnewline}
 
 \newcommand*{\adcvrowskip}{\tabularnewline[-\parskip]}
 
