@@ -365,6 +365,9 @@
 \newcommand*{\adcvemail}[3]{\def\adcv@emaillocal{#1}\def\adcv@emaildomainsecond{#2}\def\adcv@emaildomaintop{#3}}
 \newcommand*{\adcvwebsite}[2]{\def\adcv@websiteurl{#1}\def\adcv@websitetext{#2}}
 \newcommand*{\adcvlinkedin}[2]{\def\adcv@linkedinurl{#1}\def\adcv@linkedinname{#2}}
+\newcommand*{\adcvgithub}[2]{\def\adcv@githuburl{#1}\def\adcv@githubname{#2}}
+\def\adcv@githuburl{}
+\def\adcv@githubname{}
 
 \graphicspath{{icons/}}
 
@@ -382,17 +385,19 @@
 \newcommand*{\phoneicon}{\includegraphics[height=0.75em]{phone.pdf}}
 \newcommand*{\placeicon}{\includegraphics[height=0.75em]{place.pdf}}
 \newcommand*{\linkedinicon}{\includegraphics[height=0.90em]{linkedin.png}}
+\newcommand*{\githubicon}{\includegraphics[height=0.90em]{github.png}}
 
 \ifonline
   \def\adcv@address{\placeicon~\adcv@locality,~\adcv@country}
   \def\adcv@email{\envelopeicon~{\linktext\adcv@emaillocal @\adcv@emaildomainsecond.\adcv@emaildomaintop}}
   \def\adcv@linkedin{\linkedinicon~{\linktext\adcv@linkedinurl\adcv@linkedinname}}
-%   \def\adcv@linkedin{\linkedinicon~\href{\adcv@linkedinurl\adcv@linkedinname}{\adcv@linkedinname}}
+  \def\adcv@github{}
   \def\adcv@telephone{}
 \else
   \def\adcv@address{\placeicon~\adcv@street,~\adcv@postalcode~\adcv@locality,~\adcv@country}
   \def\adcv@email{\envelopeicon~\href{mailto:\adcv@emaillocal @\adcv@emaildomainsecond.\adcv@emaildomaintop}{\adcv@emaillocal @\adcv@emaildomainsecond.\adcv@emaildomaintop}}
   \def\adcv@linkedin{\linkedinicon~\href{\adcv@linkedinurl\adcv@linkedinname}{\adcv@linkedinname}}
+  \def\adcv@github{}
   \def\adcv@telephone{\phoneicon~\adcv@phone}
 \fi
 
@@ -419,13 +424,24 @@
     \def\adcv@website{}%
   \fi%
 
+  % GitHub setup
+  \ifx\adcv@githuburl\empty%
+    \def\adcv@github{}%
+  \else%
+    \ifonline%
+      \def\adcv@github{\githubicon~{\linktext\adcv@githuburl\adcv@githubname}}%
+    \else%
+      \def\adcv@github{\githubicon~\href{\adcv@githuburl\adcv@githubname}{\adcv@githubname}}%
+    \fi%
+  \fi%
+
   \begin{center}%
     \ifonline%
-      \adcv@address~\adcv@email~\adcv@website~\adcv@linkedin%
+      \adcv@address~\adcv@email~\adcv@website~\adcv@linkedin~\adcv@github%
     \else%
       \adcv@address~\adcv@telephone%
 
-      \adcv@email~\adcv@website%
+      \adcv@email~\adcv@website~\adcv@linkedin~\adcv@github%
     \fi%
   \end{center}%
 }
@@ -444,7 +460,7 @@
 \AtBeginDocument{%
   \pagestyle{fancy}%
   \fancyhead{}%
-  \fancyfoot[C]{\footnotesize\light\adcv@firstname~\adcv@lastname\ifextended\adcv@cvofkey\else\adcv@resumeofkey\fi, \adcv@date, \adcv@telephone~\adcv@email, \adcv@linkedin}%
+    \fancyfoot[C]{\footnotesize\light\adcv@firstname~\adcv@lastname\ifextended\adcv@cvofkey\else\adcv@resumeofkey\fi, \adcv@date, \adcv@telephone~\adcv@email, \adcv@linkedin\ifdefined\adcv@githuburl\ifx\adcv@githuburl\empty\else~\githubicon~\href{\adcv@githuburl\adcv@githubname}{\adcv@githuburl\adcv@githubname}\fi\else\fi}%
   \fancyfoot[R]{\raggedleft\footnotesize\light\adcv@page}%
   \renewcommand{\headrulewidth}{0em}%
   \setlength\footskip{\baselineskip}%
