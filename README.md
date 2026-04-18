@@ -38,8 +38,8 @@ The underlying class relies on common LaTeX packages, including (but not limited
 From the repository root:
 
 ```sh
-latexmk -pdf -xelatex main_resume.tex
-latexmk -pdf -xelatex main_cv.tex
+latexmk -C -outdir=out
+latexmk -pdf -xelatex -outdir=out main.tex
 ```
 
 Artifacts can optionally be configured to output to a dedicated directory (e.g. out/).
@@ -47,6 +47,7 @@ Artifacts can optionally be configured to output to a dedicated directory (e.g. 
 ---
 
 Design Notes
+
 - The resume prioritizes scanability and ATS compatibility.
 - The CV prioritizes technical completeness and narrative clarity.
 - Hyphenation is disabled globally to avoid PDF text extraction issues.
@@ -57,7 +58,8 @@ Design Notes
 ## Template Attribution
 
 This resume is built on top of the Adaptive CV LaTeX class by Alessandro Rossini.
-- Original template: https://alessandrorossini.org
+
+- Original template: <https://alessandrorossini.org>
 - License: LaTeX Project Public License (LPPL) v1.3+
 
 Significant modifications have been made to layout, macros, and styling to suit a senior software engineering resume rather than an academic CV.
