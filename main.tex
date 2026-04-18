@@ -36,7 +36,10 @@
 {\raggedright
 Senior software engineer with 8+ years of professional experience building and operating data-intensive, correctness-sensitive distributed systems with high concurrency and strict ordering guarantees. Specialised in event-driven ingestion pipelines, stream processing, and backend APIs where performance, fault tolerance, and operational reliability are critical.
 
-Recent work focused on large-scale blockchain data ingestion and analytics platforms, delivering end-to-end production ownership using Rust, Python, Kafka, ClickHouse, and Postgres.
+Recent work focused on large-scale streaming systems and evaluation-driven architecture, including independent research into robust LLM systems, retrieval pipelines, and reproducible evaluation frameworks with strong emphasis on correctness, observability, and controlled system behaviour.
+
+Built systems ensuring correctness under concurrency, retries, and failure conditions.
+
 \par}
 % ======================================================
 % EXPERIENCE
@@ -44,17 +47,32 @@ Recent work focused on large-scale blockchain data ingestion and analytics platf
 
 \section{Experience}
 
+%
 \begin{adcvtabletwo}
+
+% ---------------- Independent Researcher ----------------
+
+\adcvrowtwo{\textbf{Independent Researcher}, LLM Systems and Evaluation}{2026--Present}
+\ifextended
+  \adcvrowmulti{• Designed evaluation-driven architectures for LLM systems focused on reproducibility, latency/quality trade-offs, and controlled context construction.}
+  \adcvrowmulti{• Built configurable retrieval pipelines (semantic, hybrid, and graph-based) with pluggable components (embedders, rerankers, vector indices) to enable systematic experimentation.}
+  \adcvrowmulti{• Developed benchmarking harnesses comparing RAG, hybrid retrieval, and non-retrieval approaches using structured datasets and measurable quality metrics.}
+  \adcvrowmulti{• Applied strict context engineering principles including token budgeting, deterministic prompt construction, and failure-mode analysis.}
+\else
+  \adcvrowmulti{• Built evaluation-driven LLM systems with configurable retrieval pipelines and reproducible benchmarking.}
+  \adcvrowmulti{• Focused on correctness, observability, and controlled context construction in RAG and hybrid systems.}
+\fi
+\adcvrowskip
 
 % ---------------- Vybe Network ----------------
 
 \adcvrowtwo{\textbf{Data Engineering Team Lead}, Vybe Network — Vancouver, BC, Canada}{2025--2026}
 \ifextended
-  \adcvrowmulti{• Led a team of \textbf{3 engineers (4 including myself)} responsible for blockchain ingestion systems, analytics pipelines, and data APIs.}
+  \adcvrowmulti{• Led a team of \textbf{4 engineers} responsible for ingestion systems, analytics pipelines, and data APIs.}
   \adcvrowmulti{• Planned epics and technical priorities aligned with business OKRs, balancing feature delivery, reliability, and technical debt.}
   \adcvrowmulti{• Owned on-call operations and incident response for customer-facing systems, driving post-incident reviews and reliability improvements.}
   \adcvrowmulti{• Coordinated cross-team initiatives across data science, product, and platform engineering.}
-  \adcvrowmulti{• Remained hands-on with system design while mentoring engineers and improving CI/CD and documentation standards.}
+  \adcvrowmulti{• Remained hands-on with system design while mentoring engineers and improving CI/CD, documentation, and system reliability.}
 \else
   \adcvrowmulti{• Led a team of 3 engineers (4 including myself) owning blockchain ingestion, analytics pipelines, and customer-facing data APIs.}
   \adcvrowmulti{• Planned delivery against OKRs while maintaining on-call ownership, incident response and post-incident reliability improvements.}
@@ -63,16 +81,16 @@ Recent work focused on large-scale blockchain data ingestion and analytics platf
 
 \adcvrowtwo{\textbf{Senior Software Engineer}, Vybe Network — Vancouver, BC, Canada}{2023--2025}
 \ifextended
-  \adcvrowmulti{• Designed and operated event-driven, streaming ingestion pipelines processing \textbf{thousands of transactions per second} with strict ordering and correctness guarantees.}
+  \adcvrowmulti{• Designed high-throughput ingestion pipelines (\textbf{thousands of events/sec}) with strict ordering guarantees preventing out-of-order processing under concurrency.}
   \adcvrowmulti{• Built Python-based live transaction and account parsers backed by Kafka, Postgres, and Kubernetes in production.}
-  \adcvrowmulti{• Contributed to a Rust- and ClickHouse-based ingestion architecture, implementing concurrent, fault-tolerant pipelines with explicit backpressure and correctness-preserving offset management.}
+  \adcvrowmulti{• Implemented concurrent, fault-tolerant Rust + ClickHouse ingestion pipelines with explicit backpressure and offset management, preventing data loss and duplicate ingestion under retries and peak load.}
   \adcvrowmulti{• Developed extensible protocol parsing frameworks, scaling supported protocols from single digits to \textbf{50+ protocols}.}
   \adcvrowmulti{• Built production internal and public backend APIs using FastAPI and Actix Web, including caching, access control, and rate limiting.}
   \adcvrowmulti{• Improved observability and operational insight through Prometheus and Grafana adoption.}
 \else
-  \adcvrowmulti{• Designed and operated Solana ingestion pipelines processing thousands of transactions per second with strict ordering and correctness guarantees.}
-  \adcvrowmulti{• Built concurrent, fault-tolerant Rust + ClickHouse ingestion paths with explicit backpressure and offset management.}
-  \adcvrowmulti{• Delivered production backend APIs and stream processors using Kafka, Postgres, FastAPI, and Actix Web.}
+  \adcvrowmulti{• Designed and operated high-throughput event ingestion pipelines processing thousands of events per second with strict ordering and correctness guarantees.}
+  \adcvrowmulti{• Built concurrent, fault-tolerant Rust + ClickHouse data pipelines with explicit backpressure, batching, and efficient data layout.}
+  \adcvrowmulti{• Delivered production backend services and stream processors using Kafka and Postgres with strong emphasis on reliability and observability.}
 \fi
 \adcvrowskip
 
@@ -93,6 +111,8 @@ Recent work focused on large-scale blockchain data ingestion and analytics platf
   \adcvrowmulti{• Improved performance of strategic optimisation models, reducing execution time from weeks to hours.}
 \fi
 \adcvrowskip
+
+\clearpage
 
 % ---------------- BridgIoT ----------------
 
@@ -133,10 +153,13 @@ Recent work focused on large-scale blockchain data ingestion and analytics platf
   \adcvrowthree{\textbf{Languages:}}{Rust, Python, SQL}{}
   \adcvrowskip
 
-  \adcvrowthree{\textbf{Distributed Data Systems:}}{Kafka, ClickHouse, Postgres, Redis}{}
+  \adcvrowthree{\textbf{Distributed Data Systems:}}{Kafka, ClickHouse, Postgres, Redis, Streaming Systems}{}
   \adcvrowskip
 
   \adcvrowthree{\textbf{Workflow \& Data Pipelines:}}{Airflow}{}
+  \adcvrowskip
+
+  \adcvrowthree{\textbf{LLM \& Retrieval Systems:}}{RAG, Hybrid Retrieval, Vector Search (pgvector), Evaluation Frameworks}{}
   \adcvrowskip
 
   \adcvrowthree{\textbf{Backend \& APIs:}}{Actix Web, FastAPI, Flask}{}
